@@ -1,8 +1,6 @@
 # Welcome to War API
 
-## API UNDER CONSTRUCTION
-
-## Used Technologies 
+###  Used Technologies 
     - nodejs
     - mongodb
     - express
