@@ -59,7 +59,7 @@ exports.updateBootcamp = asyncHandler(async(req, res, next) => {
         return next(new ErrorResponse(`Bootcamp not found with id of ${req.params.id}`, 403))
     }
     
-    //make sure is bootcamp owner
+    //make sure user is bootcamp owner
     if (bootcamp.user.toString() !== req.user.id && req.user.role !== 'admin') {
         return next(
             new ErrorResponse(`User ${req.params.id} is not authorized to update this bootcamp`, 404)
@@ -140,7 +140,7 @@ exports.bootcampPhotoUpload = asyncHandler(async(req, res, next) => {
         return next(new ErrorResponse(`Bootcamp not found with id of ${req.params.id}`, 404))  
     }
 
-    //make sure is bootcamp owner
+    //make sure user is bootcamp owner
     if (bootcamp.user.toString() !== req.user.id && req.user.role !== 'admin') {
         return next(
             new ErrorResponse(`User ${req.params.id} is not authorized to upload photo this bootcamp`, 404)
