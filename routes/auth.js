@@ -7,7 +7,8 @@ const {
     forgotPassword,
     resetPassword,
     updateDetails,
-    updatePassword
+    updatePassword,
+    logout
 } = require('../controllers/auth')
 
 const router = express.Router()
@@ -16,6 +17,7 @@ const { protect } = require('../middleware/auth')
 
 router.post('/register', register)
 router.post('/login', login)
+router.post('/logout', logout)
 router.get('/me', protect, getMe)
 router.put('/updateDetails', protect, updateDetails)
 router.put('/updatePassword', protect, updatePassword)
